@@ -30,6 +30,7 @@ DROP USER IF EXISTS 'maria'@'localhost';
 SELECT USER();
 SHOW TABLES;
 SELECT * FROM larare;
+test
 
 SELECT @@version;
 SHOW VARIABLES LIKE "%version%";
