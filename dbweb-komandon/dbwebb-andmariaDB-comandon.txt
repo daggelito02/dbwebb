@@ -1,0 +1,58 @@
+
+// logga in på databasen //
+mariadb -udagge -pP@ssw0rd
+
+{
+    "host":     "localhost",
+    "user":     "dagge",
+    "password": "P@ssw0rd",
+    "database": "skolan"
+}
+
+
+// dbwebb //
+
+dbwebb publish redovisa
+dbwebb login
+
+exit
+
+// mariaDB //
+
+// kommandon utanför
+mariadb < me/skolan/create-user.sql 
+mariadb --table skolan < dml-agg.sql //ha med databasnamnet
+mariadb skolan -e "SELECT SUM(lon) AS 'Lönesumma', SUM(kompetens) AS Kompetens FROM larare;"
+
+
+// kommandon inloggad
+DROP USER IF EXISTS 'maria'@'localhost';
+SELECT USER();
+SHOW TABLES;
+SELECT * FROM larare;
+
+SELECT @@version;
+SHOW VARIABLES LIKE "%version%";
+SELECT User, Host FROM mysql.global_priv;
+SELECT akronym, fornamn, kompetens FROM larare;
+SHOW COLUMNS FROM larare;
+SELECT SUM(lon) AS 'Lönesumma', SUM(kompetens) AS Kompetens FROM larare;
+
+UPDATE larare SET lon = 30000 WHERE akronym = 'gyl' OR akronym = 'ala' ;
+UPDATE larare SET lon = 30000 WHERE akronym IN ('gyl', 'ala');
+UPDATE larare SET lon = 30000 WHERE lon IS NULL ;
+SELECT SUM(lon) AS 'Lönesumma', SUM(kompetens) AS Kompetens FROM larare;
+SELECT akronym, avdelning, fornamn, kon, lon, kompetens FROM larare ORDER BY lon DESC ;
+
+exit
+
+
+// Node.js
+
+Om du av någon anledning vill göra om installationen från början så kan 
+du enkelt radera de filerna som skapades med följande kommando.
+
+rm -rf package-lock.json node_modules/
+
+Visa fil:
+cat package.json
