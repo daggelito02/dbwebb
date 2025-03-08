@@ -13,6 +13,7 @@ mariadb -udagge -pP@ssw0rd
 // dbwebb //
 
 dbwebb publish redovisa
+dbwebb test skolan1
 dbwebb login
 
 exit
