@@ -58,3 +58,5 @@ rm -rf package-lock.json node_modules/
 
 Visa fil:
 cat package.json
+
+npx eslint index.js --fix
